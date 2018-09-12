@@ -15,8 +15,16 @@
 <script type="text/javascript" charset="utf-8">
   $(function () {
     $('form').submit(function(event) {
+      
       event.preventDefault();
-      alert("we r hack3rz");
+ 
+      const values = $(this).serialize();
+ 
+      const posting = $.post('/posts', values);
+ 
+      posting.done(function(data) {
+        // TODO: handle response
+      });
     });
   });
 </script>
